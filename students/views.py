@@ -1,7 +1,10 @@
+from datetime import datetime
+
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from students.models import Student
+from students.forms import StudentForm
 
 
 def sample(request):
@@ -26,4 +29,27 @@ def sample(request):
 <h1>{di[1]}</h1>
 </body>
 </html>""")
+
+
+
+def get_all_students(request):
+    print(request)
+    stu = Student.objects.all()
+    return render(request=request, template_name='all_students_list.html', context={'data':stu})
+
+
+def get_singel_student(request, id):
+    st = Student.objects.get(id=id)
+    return render(request, 'student_data.html', {"st":st})
+
+
+def add_student(request):
+    if request.method == 'POST':
+        form = StudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('students')  # Adjust the redirect as needed
+    else:
+        form = StudentForm()
+    return render(request, 'add_student.html', {'form': form})
 

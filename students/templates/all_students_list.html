@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Data</title>
+</head>
+<body>
+<h1>Students Table</h1>
+<ul>
+    {% for student in data %}
+    <h3><li><a href="/st/student/{{ student.id }}/">{{ student.id }} - {{ student.first_name }}</a></li></h3>
+    {% endfor %}
+</ul>
+</body>
+</html>

@@ -1,7 +1,10 @@
 from django.urls import path
 
-from students.views import sample
+from students import views as st
 
 urlpatterns = [
-    path('students/', sample, name="students")
+    path('st/', st.sample, name="st"),
+    path('students/', st.get_all_students, name="students"),
+    path('student/<int:id>/', st.get_singel_student, name="student"),
+    path('add/', st.add_student, name='add_student')
 ]
