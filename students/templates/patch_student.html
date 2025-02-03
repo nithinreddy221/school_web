@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Patch Student</title>
+</head>
+<body>
+    <h1>Update Student Info: {{ student.first_name }} {{ student.last_name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+    <a href="{% url 'students' %}">Back to Student List</a>
+</body>
+</html>
