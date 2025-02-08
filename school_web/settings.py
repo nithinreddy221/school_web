@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'students',
+    'teachers',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -84,11 +87,11 @@ WSGI_APPLICATION = 'school_web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'school_web',
+        'NAME': 'school_web',  # Check if this matches the database name you created
         'USER': 'root',
-        'PASSWORD': 'root@123',
-        'HOST': 'localhost',   # 127.0.0.1 ---- Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'PASSWORD': 'Venkat123@@@',
+        'HOST': 'localhost',  # Or your MySQL server's IP address
+        'PORT': '3306',       # Default MySQL port
     }
 }
 
