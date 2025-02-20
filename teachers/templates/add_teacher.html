@@ -1,0 +1,69 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Teacher</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg p-4 rounded-3">
+                <h2 class="text-center mb-4">Add Teacher</h2>
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="id_first_name" class="form-label fw-bold">First Name</label>
+                        {{ form.first_name }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_last_name" class="form-label fw-bold">Last Name</label>
+                        {{ form.last_name }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_email" class="form-label fw-bold">Email</label>
+                        {{ form.email }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_salary" class="form-label fw-bold">Salary</label>
+                        {{ form.salary }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_capable_subjects" class="form-label fw-bold">Capable Subjects</label>
+                        <div class="form-check">
+                            {{ form.capable_subjects }}
+                        </div>
+                    </div>
+<!--                    <div class="mb-3">-->
+<!--                        <label for="id_hire_date" class="form-label fw-bold">Hire Date :</label>-->
+<!--                        <div class="form-check">-->
+<!--                            {{ form.hire_date }}-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

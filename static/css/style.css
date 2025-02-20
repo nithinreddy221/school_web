@@ -1,0 +1,26 @@
+.heading{
+color:#15f9f3;
+text-align:center;
+}
+.perfect-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color:#f9b815;
+    color: black;
+    padding: 10px;
+    font-size: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin:20px;
+}
+
+.perfect-btn:hover {
+    background-color: darkblue;
+    color:white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    margin-top: 30px;
+}

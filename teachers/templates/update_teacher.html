@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>update teacher</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<center>
+<h2>Edit Teacher Info</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+    <button type="submit" class="perfect-btn">Save Changes</button>
+    <a href="{% url 'teacher_detail' teacher.id %}" class="perfect-btn">Cancel</a>
+    </div>
+</form>
+</center>
+<!--<a href="{% url 'teacher_detail' teacher.id %}" class="perfect-btn">Cancel</a>-->
+</body>
+</html>

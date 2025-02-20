@@ -1,5 +1,4 @@
-from django.http import HttpResponse
-
+from django.shortcuts import render
 
 def landing_page(request):
-    return HttpResponse("Welcome to School Web Application")
+    return render(request, 'welcom_page.html')  # Ensure the correct filename

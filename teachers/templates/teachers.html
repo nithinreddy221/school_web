@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>teachers</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body><br><br>
+<center>
+    <h1>Teacher List</h1>
+<div>
+<table border="1" >
+    <thead>
+        <tr>
+            <th>Teacher Name</th>
+            <th>Subjects</th>
+            <th>Hire Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for teacher in data %}
+        <tr>
+            <td><a href="{% url 'teacher_detail' teacher.id %}">{{ teacher.first_name }} {{ teacher.last_name }}</a></td>
+            <td>{{ teacher.capable_subjects.all|join:", " }}</td>
+
+        <td>
+        <div class="mb-3">
+    <input type="text" class="form-control" value="{{ teacher.hire_date }}" readonly>
+</div>
+            </td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'add_teacher' %}" class="perfect-btn">Add New One</a>
+</div>
+    </center>
+</body>
+</html>
